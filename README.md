@@ -14,5 +14,21 @@ euclideanDistance <- function(u, v)
   sqrt(sum((u - v)^2))
 }
 ```
-
-
+#### Функция KNN:
+```diff
+kNN <- function(xl, z, k)
+{
+  ## Сортируем выборку согласно классифицируемого объекта
+  orderedXl <- sortObjectsByDist(xl, z)
+  n <- dim(orderedXl)[2] - 1
+  ## Получаем классы первых k соседей
+  classes <- orderedXl[1:k, n + 1]
+  ## Составляем таблицу встречаемости каждого класса
+  22
+  counts <- table(classes)
+  ## Находим класс, который доминирует среди первых k соседей
+  class <- names(which.max(counts))
+  return (class)
+}
+```
+![Карта классификации](https://github.com/boername/Machine/blob/master/pict/pict_KNN2.PNG)
