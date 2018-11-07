@@ -31,4 +31,5 @@ kNN <- function(xl, z, k)
   return (class)
 }
 ```
-![Карта классификации](https://github.com/boername/Machine/blob/master/pict/pict_KNN2.PNG)
+#### Карта классификации:
+![](https://github.com/boername/Machine/blob/master/pict/pict_KNN2.PNG)
