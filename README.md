@@ -1,3 +1,2 @@
 # Machine
-ALL LABS HERE!
-K
+# Метрические алгоритмы
