@@ -33,3 +33,28 @@ kNN <- function(xl, z, k)
 ```
 #### Карта классификации:
 ![](https://github.com/boername/Machine/blob/master/pict/pict_KNN2.PNG)
+
+### Алгоритм 1NN
+Алгоритм 1NN является частным случаем KNN. При его использовании аналогичным образом измеряется расстояние от классифицируемого объекта  z до всех элементов обучающей выборки Xl. Далее происходит сортировка этих расстояний. В качестве ответа(класса) выводится тот класс, элемент которого явлется самым ближайшим к классифицируемому.   
+#### Функция 1NN:
+```diff
+nn <- function(z, xl)
+{
+  #print(xl) вывести выборку
+  #определяю размерность выборки
+  l <- nrow(xl)
+  n <- ncol(xl)-1
+  
+  distances <- c() #вектор расстояний
+  for (i in 1:l)
+  {
+    distances <- c(distances, euclideanDistance(xl[i, 1:n], z))
+  }
+  #print(distances) вывод расстояний
+  #order(distances) упорядочивание расстояний
+  xl[order(distances)[1], n+1]
+}
+```
+#### Карта классификации:
+![](https://github.com/boername/Machine/blob/master/pict/pict_1NN2.PNG)
+
