@@ -1,11 +1,11 @@
-X<-sample(c(1:150),15,replace=TRUE) #sample случайным образом переупорядочивает элементы, переданные в качестве первого аргумента
+X<-sample(c(1:150),replace=TRUE) #sample случайным образом переупорядочивает элементы, переданные в качестве первого аргумента
 xl <- iris[X, 3:5]                  #replace=TRUE гарантирует, что элемент не будет дважды
 
 #xl выборка по 15 случайным числам (от 1 до 150)
 
 colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue") #цвета выборки
 
-plot(xl[, 1:2], pch = 21, bg = colors[xl$Species], col= colors[xl$Species], asp = 1) #рисую выборку из 15 объектов
+plot(xl[, 1:2], pch = 21, bg = colors[xl$Species], col= colors[xl$Species], asp = 1) #рисую выборку из 150 объектов
 
 euclideanDistance <- function(u, v) #функция расстояния
 { 
