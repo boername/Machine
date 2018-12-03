@@ -57,3 +57,4 @@ nn <- function(z, xl)
 #### Карта классификации:
 ![](https://github.com/boername/Machine/blob/master/pict/pict_1NN2.PNG)
 
+### Алгоритм KwNN
