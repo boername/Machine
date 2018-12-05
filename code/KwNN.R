@@ -1,27 +1,53 @@
-euclideanDistance <- function(u, v)
+## Евклидово расстояние
+euclideanDistance <- function(u, v)# u-первая координата, v-вторая(параметры фунцкии расстояния) 
 {
-  sqrt(sum((u - v)^2))
+  sqrt(sum((u - v)^2)) # корень от(суммы(sum) квадратов разностей координат двух точек)
 }
 
-sortObjectsByDist <- function(xl, z, metricFunction = euclideanDistance)
+
+# присваиваем цвета: каждому классу- соответствующий
+colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
+
+# инициализация выборки ирисов
+iris30 = iris[sample(c(1:150), replace=FALSE), 3:5] #3 колонка - длина лепестка, 4 - ширина лепестка, 5 - класс ириса
+
+# отрисовка выборки ирисов
+plot(iris30[, 1:2], pch = 21, bg = colors[iris30$Species], col = colors[iris30$Species]) #1 колонка - длина, 2 - ширина лепестка
+xl <- iris30[, 1:3] #1 колонка - длина, 2 - ширина лепестка, 3 - класс ириса
+
+
+
+## Сортируем объекты согласно расстояния до объекта z()
+sortObjectsByDist <- function(xl, z, metricFunction = euclideanDistance) #параметры функции сортировки: ирис, точка, функция расстояния
 {
-  l <- dim(xl)[1]
-  n <- dim(xl)[2] - 1
+  # определяем размерность выборки xl, [1]-строки, [2]-столбцы
+  l <- dim(xl)[1] # количество строк, они равны числу ирисов
+  n <- dim(xl)[2] - 1 # количество столбцов(здесь размеры лепестков ирисов), -1, так как последний столбец - это класс
   
-  distances <- matrix(NA, l, 2)
+  ## Создаём матрицу расстояний
+  distances <- matrix(NA, l, 2) # l - это кол-во строк, 2 - это кол-во стобцов; NA значит, что матрица создаётся сначала пустой
   
-  for (i in 1:l)
+  for (i in 1:l) #i варьируется от 1 до l, а l у нас 150, как ирисов
   {
-    distances[i, ] <- c(i, metricFunction(xl[i, 1:n], z))
+    # в i-ою строку distances, во все столбцы(можно было написать 1:2) инициализируется:
+    distances[i, ] <- c(i, metricFunction(xl[i, 1:n], z)) # расстояние от ириса i до точки z
+    # в первом столбце i - номер ириса, во втором - metricFunction(расстояние до него от точки z)
   }
-  orderedXl <- xl[order(distances[, 2]), ]
+  ## Сортируем
+  orderedXl <- xl[order(distances[, 2]), ] # отсортированная выборка по расстояниям
+  # order сортирует выборку, используя все строки и второй столбец ditances,
+  # в котором хранятся расстояния от ирисов, до каждой точки z.!После запятой все столбцы(они же параметры ирисов)
   return (orderedXl);
 }
 
-kwNN <- function(xl, z, k, q) 
-{ 
-  orderedXl <- sortObjectsByDist(xl, z) 
-  n <- dim(orderedXl)[2] - 1 
+
+
+## Применяем метод kNN
+kNN <- function(xl, z, k, q)
+{
+  ## Сортируем выборку согласно классифицируемого объекта
+  orderedXl <- sortObjectsByDist(xl, z)
+  n <- dim(orderedXl)[2] - 1 # 2  стобец содержит классы ирисов
   v1 <- c('setosa', 'versicolor', 'virginica')
   v2 <- c(0,0,0)
   
@@ -41,16 +67,22 @@ kwNN <- function(xl, z, k, q)
   
   class <- v1[which.max(v2)]
   return (class) 
+  
 }
 
 
+## Рисуем выборку
 colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
-plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1, xlab = "Длина лепестка", ylab = "Ширина лепестка", main = "Классификация объекта (2.5; 1.5) при k=3")
+plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species])
 
 
-z <- c(2.2, 1.2)
-k <- 10
-q <- 0.8
-xl <- iris[, 3:5]
-class <- kwNN(xl, z, k, q)
-points(z[1], z[2], pch = 22, bg = colors[class], asp = 1)
+## Классификация одного заданного объекта
+for (ytmp in seq(0, 3, by=0.1)){
+  for (xtmp in seq(0, 7, by=0.1)){
+    
+    z <- c(xtmp, ytmp)
+    xl <- iris[, 3:5]
+    class <- kNN(xl, z, k=6, q=0.8)
+    points(z[1], z[2], pch = 1, col = colors[class]) #красит точку в цвет опред. класса
+  }
+}
