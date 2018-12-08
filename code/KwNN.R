@@ -4,8 +4,7 @@ euclideanDistance <- function(u, v)# u-первая координата, v-вт
   sqrt(sum((u - v)^2)) # корень от(суммы(sum) квадратов разностей координат двух точек)
 }
 
-
-# присваиваем цвета: каждому классу- соответствующий
+# присваиваем цвета: каждому классу-соответствующий
 colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
 
 # инициализация выборки ирисов
@@ -14,7 +13,6 @@ iris30 = iris[sample(c(1:150), replace=FALSE), 3:5] #3 колонка - длин
 # отрисовка выборки ирисов
 plot(iris30[, 1:2], pch = 21, bg = colors[iris30$Species], col = colors[iris30$Species]) #1 колонка - длина, 2 - ширина лепестка
 xl <- iris30[, 1:3] #1 колонка - длина, 2 - ширина лепестка, 3 - класс ириса
-
 
 
 ## Сортируем объекты согласно расстояния до объекта z()
@@ -47,25 +45,28 @@ kNN <- function(xl, z, k, q)
 {
   ## Сортируем выборку согласно классифицируемого объекта
   orderedXl <- sortObjectsByDist(xl, z)
-  n <- dim(orderedXl)[2] - 1 # 2  стобец содержит классы ирисов
-  v1 <- c('setosa', 'versicolor', 'virginica')
-  v2 <- c(0,0,0)
+  #3 столбец orderedXl содержит класс
+  v1 <- c('setosa', 'versicolor', 'virginica') #создаём вектор с именами классов
+  v2 <- c(0,0,0) #создаём пустой вектор
   
   for(i in 1:k){ 
-    orderedXl[i, 4] = q^i 
-  } 
+    orderedXl[i, 4] = q^i #для первых k соседей каждой точки присваивается вес(в 4 столбец)(каждому соседу)
+  }
+  #4 столбец orderedXl содержит вес
   
-  a=n+1 
-  b=n+2 
-  classes <- orderedXl[1:k, a:b]
+  classes <- orderedXl[1:k, 3:4]
+  #classes содержит класс и вес первых k соседей каждой точки
+
   
   v2[1]=sum(classes[classes$Species=='setosa', 2])
+  #суммируем величины 2го столбца, где вес для сетосы, аналогично другие
   v2[2]=sum(classes[classes$Species=='versicolor', 2])
   v2[3]=sum(classes[classes$Species=='virginica', 2])
   
-  amo <- cbind(v1,v2)
-  
+  gen <- cbind(v1,v2) #объединим векторы v1 и v2
   class <- v1[which.max(v2)]
+  #which.max возвращает порядковый номер элемента объекта с максимальным значением
+  #таким образом в class попадает индекс класса(где вес максимален)
   return (class) 
   
 }
