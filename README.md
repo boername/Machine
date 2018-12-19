@@ -97,3 +97,5 @@ kwNN <- function(xl, z, k, q)
 ```
 #### Карта классификации:
 ![](https://github.com/boername/Machine/blob/master/pict/pict_KwNN.PNG)
+
+## Байесовские алгоритмы
