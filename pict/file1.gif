@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0084)https://vk.com/doc2000039902_485404514?hash=a20bb837a5733e4e8b&dl=d637d8a61f8d8fd3dc -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="shortcut icon" href="https://vk.com/images/icons/favicons/fav_logo.ico?6"><link rel="stylesheet" type="text/css" href="./file1_files/common.css"><link rel="stylesheet" type="text/css" href="./file1_files/fonts_cnt.css"><meta name="robots" content="noindex,nofollow"><title>file.gif</title>
+<style>
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  border: none;
+}
+.iframe {
+  border: none;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.docs_name {
+  display: block;
+  padding-top: 7px;
+}
+.docs_info {
+  padding: 7px 10px 0px;
+  color: #939699;
+}
+.docs_panel_wrap {
+  height: 50px;
+}
+.docs_panel {
+  background: #F1F1F1;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+.docs_panel .docs_del_wrap {
+  margin: 0 5px;
+}
+.can_zoom {
+  max-width: 100%;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: -zoom-in;
+}
+.docs_panel .fl_r + .fl_r {
+    margin-right: 10px;
+}
+.can_zoom_out {
+  min-width: 100%;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  cursor: -zoom-out;
+}
+</style>
+<script>
+function saveDoc() {
+  var src = 'https://psv4.userapi.com/c848028/u2000039902/docs/d6/520d2892d629/file.gif?extra=EXzF0o0d-l_qcg7Hrj3KPxoxSTANFlsTNHYJpK0s9gVLnClh4AHBih1HuhgSbQmMSTXcnMmRBD3MAbPflW-Mvzv_lYVO4_6Ot5fIVghuDuHuthWH8KmhJjWb8luH4ojyinw6JP7Dc_T_JH9W9EZwKKw';
+  if (src.match(/\?/)) {
+    src += '&dl=1';
+  } else {
+    src += '?dl=1';
+  }
+  location.replace(src);
+  return false;
+}
+
+function saveLitresDoc() {
+  var anchor = document.createElement('a');
+  anchor.href = 'https://psv4.userapi.com/c848028/u2000039902/docs/d6/520d2892d629/file.gif?extra=EXzF0o0d-l_qcg7Hrj3KPxoxSTANFlsTNHYJpK0s9gVLnClh4AHBih1HuhgSbQmMSTXcnMmRBD3MAbPflW-Mvzv_lYVO4_6Ot5fIVghuDuHuthWH8KmhJjWb8luH4ojyinw6JP7Dc_T_JH9W9EZwKKw';
+  anchor.target = '_blank';
+  anchor.download = 'book.pdf';
+
+  var clickEvent = new MouseEvent("click", {
+    "view": window,
+    "bubbles": true,
+    "cancelable": false
+  });
+  anchor.dispatchEvent(clickEvent);
+}
+function litresBuy() {
+    var src= '/doclinks.php?link=&hash=c29555746f65cfaa6d3d6d8b142a4905&act=buy_from_preview_page&platform=web2';
+    if (src) {
+        window.location = src;
+    }
+    return false;
+}
+function imgZoom(obj) {
+  if (obj.className == 'can_zoom') {
+    obj.className = 'can_zoom_out';
+  } else {
+    obj.className = 'can_zoom';
+    window.scroll(0, 0);
+  }
+}
+</script>
+</head>
+<body onkeydown="if (event.keyCode == 83 &amp;&amp; (event.ctrlKey || event.metaKey)) return saveDoc(event);">
+<noindex>
+<div class="docs_panel_wrap">
+  <div class="docs_panel">
+    <div class="clear_fix" style="padding: 10px 20px;">
+      <button class="flat_button fl_r" onclick="return saveDoc();">Сохранить документ на диск</button>
+      <div class="docs_info fl_r"></div>
+      <a class="docs_name fl_l" onclick="return saveDoc();"><b>file.gif</b></a>&nbsp;
+    </div>
+  </div>
+</div><center><img src="./file1_files/file.gif" class="can_zoom" onclick="imgZoom(this);"></center>
+</noindex>
+
+<script src="chrome-extension://cffbbjapppeecmibpeloapkdmcgjonmh/VKOPTIONS.js"></script></body></html>
