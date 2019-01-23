@@ -153,6 +153,11 @@ naiveb = function(x, Py, Mo, covar, m, n) {
 ## Линейные алгоритмы
 Пусть ![](http://latex.codecogs.com/svg.latex?X%20%3D%20%5Cmathbb%7BR%7D%5En)
 и ![](http://latex.codecogs.com/svg.latex?Y%20%3D%20%5C%7B-1%3B&plus;1%5C%7D).  
-Тогда алгоритм ![](http://latex.codecogs.com/svg.latex?a%28x%2Cw%29%3D%20%5Ctext%7Bsign%7Df%28x%2Cw%29%3D%5Ctext%7Bsign%7D%20%28%5Clangle%20w%2Cx%20%5Crangle-w_0%29%2Cw%20%5Cin%20%5Cmathbb%7BR%7D%5En) - это __линейный алгоритмом классификации__.  
-Если _f_>0, то алгоритм _a_ относит _x_ к классу +1, иначе к классу -1.
+Тогда алгоритм ![](http://latex.codecogs.com/svg.latex?a%28x%2Cw%29%3D%20%5Ctext%7Bsign%7Df%28x%2Cw%29%3D%5Ctext%7Bsign%7D%20%28%5Clangle%20w%2Cx%20%5Crangle-w_0%29%2Cw%20%5Cin%20%5Cmathbb%7BR%7D%5En) - это __линейный алгоритм классификации__.  
+Если _f_>0, то алгоритм _a_ относит _x_ к классу +1, иначе к классу -1,  
+
+где ![](http://latex.codecogs.com/svg.latex?%5Clangle%20w%2Cx%20%5Crangle%3D0) - этой __уравнение разделяющей поверхности__.  
+
+Другими словами, если x находится по одну сторону гиперплоскости с её направляющим вектором w, объект x относится к классу +1, в противном случае - к классу -1.  
+
 
