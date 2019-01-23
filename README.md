@@ -218,5 +218,7 @@ __! Стоит задача__ подобрать оптимальный вект
 1) Функция потерь имеет следующий вид:  
 ![](http://latex.codecogs.com/svg.latex?%5Cmathcal%7BL%7D%28M%29%3D%28M-1%29%5E2%3D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i-1%29%5E2)  
 2) Веса обновляются по такому правилу:  
-![](http://latex.codecogs.com/svg.latex?w%3Dw-%5Ceta%28%5Clangle%20w%2Cx_i%20%5Crangle-y_i%29x_i).
+![](http://latex.codecogs.com/svg.latex?w%3Dw-%5Ceta%28%5Clangle%20w%2Cx_i%20%5Crangle-y_i%29x_i).  
+
+Обучение ADALINE заключается в подборе наилучших значений вектора весов *w* с помощью функционала потерь.
 
