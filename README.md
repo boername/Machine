@@ -210,5 +210,13 @@ __! Стоит задача__ подобрать оптимальный вект
 ![](http://latex.codecogs.com/svg.latex?Q%3D%281-%5Clambda%29Q&plus;%5Clambda%20%5Cvarepsilon_i),  
 где ![](http://latex.codecogs.com/svg.latex?%5Cvarepsilon_i%3D%5Cmathcal%7BL%7D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29)
 – __ошибка__ алгоритма на случайном элементе ![](http://latex.codecogs.com/svg.latex?x_i) из обучающей выборки,  
-![](http://latex.codecogs.com/svg.latex?%5Clambda) – __параметр сглаживания__, он обычно равен: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Cell%7D).
-*Если алгоритм не допустит ошибки ни на одном элементе или значение Q будет стабилизировано, то его работа будет остановлена*.
+![](http://latex.codecogs.com/svg.latex?%5Clambda) – __параметр сглаживания__, он обычно равен: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Cell%7D).  
+*Если алгоритм не допустит ошибки ни на одном элементе или значение Q будет стабилизировано, то его работа будет остановлена*.  
+
+### ADALINE  
+В основе __ADALINE__(адаптивный линейный элемент) лежит __метод стохастического градиента__. Изменены только две вещи:  
+1) Функция потерь имеет следующий вид:  
+![](http://latex.codecogs.com/svg.latex?%5Cmathcal%7BL%7D%28M%29%3D%28M-1%29%5E2%3D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i-1%29%5E2)  
+2) Веса обновляются по такому правилу:  
+![](http://latex.codecogs.com/svg.latex?w%3Dw-%5Ceta%28%5Clangle%20w%2Cx_i%20%5Crangle-y_i%29x_i).
+
