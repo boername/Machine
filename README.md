@@ -195,6 +195,19 @@ __! Стоит задача__ подобрать оптимальный вект
 Обычно она производится присваиванием весам случайных малых значений:
 ![](http://latex.codecogs.com/svg.latex?w_j%3A%3D%5Ctext%7Brandom%7D%28-%5Cfrac%7B1%7D%7B2n%7D%2C&plus;%5Cfrac%7B1%7D%7B2n%7D%29), где _n_ – количество признаков _x_.  
 
-3) 
+3) Вычисление оценки функционала эмпирического риска: 
+![](http://latex.codecogs.com/svg.latex?Q%3A%3D%5Csum_%7Bi%3D1%7D%5E%7B%5Cell%7D%5Cmathcal%7BL%7D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29)  
+
+После этого начинается *итерационный процесс*, где на каждом шаге вектор *w* сдвигается в направлении наиболее быстрого убывания Q.
+*(противоположно вектору градиента)*  
+Веса вектора *w* меняются так:  
+![](http://latex.codecogs.com/svg.latex?w%3A%3Dw-%5Ceta%20Q%27%28w%29)  
+
+или  
+
+![](http://latex.codecogs.com/svg.latex?w%3A%3Dw-%5Ceta%5Csum_%7Bi%3D1%7D%5E%7B%5Cell%7D%5Cmathcal%7BL%7D%27%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29x_iy_i), где  
+![](http://latex.codecogs.com/svg.latex?%5Ceta%3E0) – __темп обучения__. Оптимально брать темп: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Ctext%7Biteration%7D%7D).
+
+
 
 
