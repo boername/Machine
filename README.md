@@ -211,5 +211,4 @@ __! Стоит задача__ подобрать оптимальный вект
 где ![](http://latex.codecogs.com/svg.latex?%5Cvarepsilon_i%3D%5Cmathcal%7BL%7D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29)
 – __ошибка__ алгоритма на случайном элементе ![](http://latex.codecogs.com/svg.latex?x_i) из обучающей выборки,  
 ![](http://latex.codecogs.com/svg.latex?%5Clambda) – __параметр сглаживания__, он обычно равен: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Cell%7D).
-
-
+*Если алгоритм не допустит ошибки ни на одном элементе или значение Q будет стабилизировано, то его работа будет остановлена*.
