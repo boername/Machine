@@ -233,7 +233,11 @@ __! Стоит задача__ подобрать оптимальный вект
 ![](http://latex.codecogs.com/svg.latex?w%20%3A%3D%20w&plus;%5Ceta%20y_ix_i%5Csigma%28-%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29), где  
 ![](http://latex.codecogs.com/svg.latex?%5Csigma%28z%29%3D%5Cfrac%7B1%7D%7B1&plus;e%5E%7B-z%7D%7D) – _сигмоидная функция_.  
 
-__Реализация линейных алгоритмов здесь:__ [Линейные](code/Линейные)
+__Реализация линейных алгоритмов здесь:__ [Линейные](code/Линейные)  
+
+__Результат работы алгоритмов ADALINE и Логистической регрессии:__  
+![](https://github.com/boername/Machine/blob/master/pict/AdalineReg.PNG)
+
 
 
 
