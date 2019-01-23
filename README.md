@@ -207,13 +207,10 @@ __! Стоит задача__ подобрать оптимальный вект
 ![](http://latex.codecogs.com/svg.latex?%5Ceta%3E0) – __темп обучения__. Оптимально брать темп: ![](https://latex.codecogs.com/gif.latex?%5Ceta%20%3D%20%5Cfrac%7B1%7D%7Biteration%7D)
 
 4) Критерий останова заключается в оценке функционала эмпирического риска *Q* методом __экспоненциальной скользящей средней__:  
-![](http://latex.codecogs.com/svg.latex?Q%3D%281-%5Clambda%29Q&plus;%5Clambda%20%5Cvarepsilon_i), где  
-![](http://latex.codecogs.com/svg.latex?%5Cvarepsilon_i%3D%5Cmathcal%7BL%7D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29)
-– __ошибка__ алгоритма на случайном элементе
-![](http://latex.codecogs.com/svg.latex?x_i) из обучающей выборки,  
+![](http://latex.codecogs.com/svg.latex?Q%3D%281-%5Clambda%29Q&plus;%5Clambda%20%5Cvarepsilon_i),  
+где ![](http://latex.codecogs.com/svg.latex?%5Cvarepsilon_i%3D%5Cmathcal%7BL%7D%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29)
+– __ошибка__ алгоритма на случайном элементе ![](http://latex.codecogs.com/svg.latex?x_i) из обучающей выборки,  
 
-![](http://latex.codecogs.com/svg.latex?%5Clambda) – __параметр сглаживания__,  
-обычно равен:  
-![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Cell%7D).
+![](http://latex.codecogs.com/svg.latex?%5Clambda) – __параметр сглаживания__, он обычно равен: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Cell%7D).
 
 
