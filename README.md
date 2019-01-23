@@ -202,7 +202,8 @@ __! Стоит задача__ подобрать оптимальный вект
 *(противоположно вектору градиента)*  
 
 Веса вектора *w* меняются так: ![](http://latex.codecogs.com/svg.latex?w%3A%3Dw-%5Ceta%20Q%27%28w%29)  
-или ![](http://latex.codecogs.com/svg.latex?w%3A%3Dw-%5Ceta%5Csum_%7Bi%3D1%7D%5E%7B%5Cell%7D%5Cmathcal%7BL%7D%27%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29x_iy_i), где  
+или  
+![](http://latex.codecogs.com/svg.latex?w%3A%3Dw-%5Ceta%5Csum_%7Bi%3D1%7D%5E%7B%5Cell%7D%5Cmathcal%7BL%7D%27%28%5Clangle%20w%2Cx_i%20%5Crangle%20y_i%29x_iy_i), где  
 ![](http://latex.codecogs.com/svg.latex?%5Ceta%3E0) – __темп обучения__. Оптимально брать темп: ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B%5Ctext%7Biteration%7D%7D).
 
 
