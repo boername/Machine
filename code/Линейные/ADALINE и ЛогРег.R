@@ -11,7 +11,7 @@ trainingSampleNormalization <- function(xl)
   return (xl)
 }
 
-## Добавление колонки для из -1 для w0
+## Добавление колонки для w0
 trainingSamplePrepare <- function(xl)
 {
   l <- dim(xl)[1]
