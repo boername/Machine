@@ -163,9 +163,10 @@ naiveb = function(x, Py, Mo, covar, m, n) {
 
 ### Подстановочный алгоритм(Plug-in)
 __Plug-in__ является _байесовским_ алгоритмом классификации, в котором для восстановления плотностей используется модель _многомерного нормального распределения_:  
-![](https://latex.codecogs.com/gif.latex?N%28x%2C%20%5Cmu%2C%20%5CSigma%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B%282%5Cpi%29%5En%7C%5CSigma%7C%7D%7Dexp%28%5Cfrac%7B-1%7D%7B2%7D%28x%20-%20%5Cmu%29%5ET%20%5CSigma%5E%7B-1%7D%28x%20-%20%5Cmu%29%29%2C%20x%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%7D), где   
-![](https://latex.codecogs.com/gif.latex?%5Cmu%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%7D) - это мат. ожидание(центр), а ![](https://latex.codecogs.com/gif.latex?%5CSigma%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%5Ctimes%20n%7D) - ков. матрица (симметричная, невырожденная, положительно определённая).  
-В основе метода лежит восстановление параметров для каждого класса по следующим формулам:
+![](https://latex.codecogs.com/gif.latex?N%28x%2C%20%5Cmu%2C%20%5CSigma%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B%282%5Cpi%29%5En%7C%5CSigma%7C%7D%7Dexp%28%5Cfrac%7B-1%7D%7B2%7D%28x%20-%20%5Cmu%29%5ET%20%5CSigma%5E%7B-1%7D%28x%20-%20%5Cmu%29%29%2C%20x%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%7D),  
+где ![](https://latex.codecogs.com/gif.latex?%5Cmu%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%7D) - это мат. ожидание(центр),  
+а ![](https://latex.codecogs.com/gif.latex?%5CSigma%20%5Cepsilon%20%5Cmathbb%7BR%7D%5E%7Bn%5Ctimes%20n%7D) - ков. матрица (симметричная, невырожденная, положительно определённая).  
+В основе метода лежит восстановление параметров для каждого класса по следующим формулам:  
 ![](https://latex.codecogs.com/gif.latex?%5Cmu_y%20%3D%20%5Cfrac%7B1%7D%7Bl_y%7D%5Csum_%7Bx_i%3Ay_i%20%3D%20y%7D%20x_i),  
 ![](https://latex.codecogs.com/gif.latex?%5CSigma_y%20%3D%20%5Cfrac%7B1%7D%7Bl_y%20-%201%7D%5Csum_%7Bx_i%3Ay_i%20%3D%20y%7D%28x_i%20-%20%5Cmu_y%29%28x_i%20-%20%5Cmu_y%29%5ET).  
 Далее они подставляются в формулу _оптимального байесовского классификатора_.  
